@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+const API = "https://codelens-backend-production.up.railway.app";
+
 function FileTree({ nodes }) {
   const [selectedFile, setSelectedFile] = useState(null);
   const [code, setCode] = useState("");
@@ -22,14 +24,14 @@ function FileTree({ nodes }) {
       setExplanation("");
 
       const fileRes = await axios.get(
-        `http://localhost:8081/api/repo/file?path=${encodeURIComponent(node.path)}`
-      );
+            `${API}/api/repo/file?path=${encodeURIComponent(node.path)}`
+          );
       const fileContent = fileRes.data;
       setCode(fileContent);
 
       const codeSnippet = fileContent.slice(0, 2000);
       const aiRes = await axios.post(
-        "http://localhost:8081/api/repo/explain",
+  `${API}/api/repo/explain`,
         codeSnippet,
         { headers: { "Content-Type": "text/plain" } }
       );
