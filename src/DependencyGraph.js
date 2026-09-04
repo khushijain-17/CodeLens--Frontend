@@ -187,7 +187,7 @@ export default function DependencyGraph({ repoPath, onFileClick }) {
       setLoading(true);
       setError("");
       const res = await axios.get(
-        `http://localhost:8081/api/repo/graph?repoPath=${encodeURIComponent(repoPath)}`
+        `https://codelens-backend-production.up.railway.app/api/repo/graph?repoPath=${encodeURIComponent(repoPath)}`
       );
       const data = res.data;
       setGraphData(data);
