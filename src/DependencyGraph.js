@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 import axios from "axios";
 
 // Define backend API base URL
-const API = import.meta.env.VITE_API_BASE_URL || "https://codelens-backend-fygx.onrender.com";
+
+const API = process.env.REACT_APP_API_BASE_URL || "https://codelens-backend-fygx.onrender.com";
 
 const TYPE_COLORS = {
   java:       { node: "#22d3a0", glow: "rgba(34,211,160,0.4)"  },
