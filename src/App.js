@@ -4,7 +4,7 @@ import FileTree from "./FileTree";
 import DependencyGraph from "./DependencyGraph";
 import "./App.css";
 
-const API = "https://codelens-backend-production.up.railway.app";
+const API = "https://codelens-backend-fygx.onrender.com";
 
 const toApiUrl   = (url) => url.trim().endsWith(".git") ? url.trim() : url.trim() + ".git";
 const toDisplay  = (url) => url.replace("https://github.com/", "").replace(".git", "");

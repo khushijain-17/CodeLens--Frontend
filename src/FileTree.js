@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const API = "https://codelens-backend-production.up.railway.app";
+const API = "https://codelens-backend-fygx.onrender.com";
 
 function FileTree({ nodes }) {
   const [selectedFile, setSelectedFile] = useState(null);
